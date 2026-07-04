@@ -25,15 +25,16 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            PlayerJump();
+        }
+        
         // if (GroundCheckFunction())
         // {
-        //     if (Input.GetKeyDown(KeyCode.Space))
-        //     {
-        //         PlayerJump();
-        //     }
         //
-        //     PlayerLimitVelocity();
-        //
+        //     
         //     if (PlayerMovementForce != PlayerGroundForce)
         //     {
         //         PlayerMovementForce = PlayerGroundForce;
@@ -68,10 +69,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    // void PlayerJump()
-    // {
-    //     playerRB.AddForce(Vector3.up * PlayerJumpForce, ForceMode.Impulse);
-    // }
+    void PlayerJump()
+    {
+        playerRB.AddForce(Vector3.up * PlayerJumpForce, ForceMode.Impulse);
+    }
 
     void PlayerMoveForward()
     {
